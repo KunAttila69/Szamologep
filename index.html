@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Számológép</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <p>Kérem az első számot:</p>
+    <input type="number" id="szam1">
+    <p>Kérem a második számot:</p>
+    <input type="number" id="szam2"><br>
+    <button onclick="Hozzaad()">+</button>
+    <button onclick="Kivon()">-</button>
+    <button onclick="Szoroz()">*</button>
+    <button onclick="Oszt()">/</button>
+    <br>
+    <b>Eredmény:</b>
+    <b id="eredmeny"></b>
+</body>
+<script>
+    var szam1Element = document.getElementById("szam1")
+    var szam2Element = document.getElementById("szam2")
+    var eredmeny = document.getElementById("eredmeny")
+    var szam1 = 0
+    var szam2 = 0
+
+    function Frissit() {
+        szam1 = parseInt(szam1Element.value)
+        szam2 = parseInt(szam2Element.value)
+    }
+
+    function Hozzaad() {
+        Frissit()
+        eredmeny.innerHTML = szam1+szam2
+    }
+    function Kivon() {
+        Frissit()
+        eredmeny.innerHTML = szam1-szam2
+    }
+    function Szoroz() {
+        Frissit()
+        eredmeny.innerHTML = szam1*szam2
+    }
+    function Oszt() {
+        Frissit()
+        eredmeny.innerHTML = szam1/szam2
+    }
+
+
+</script>
+
+</html>
